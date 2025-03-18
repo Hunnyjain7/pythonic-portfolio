@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
+import { FaXTwitter, FaCode } from 'react-icons/fa6';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,9 +38,6 @@ const Navigation = () => {
             <Link href="#projects" className="text-gray-300 hover:text-white font-fira-code">
               .projects()
             </Link>
-            <Link href="#education" className="text-gray-300 hover:text-white font-fira-code">
-              .education()
-            </Link>
             <Link href="#contact" className="text-gray-300 hover:text-white font-fira-code">
               .contact()
             </Link>
@@ -59,6 +57,22 @@ const Navigation = () => {
                 aria-label="LinkedIn Profile"
               >
                 <FaLinkedin />
+              </Link>
+              <Link 
+                href="https://x.com/hunnyjain7" 
+                target="_blank"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="X (Twitter) Profile"
+              >
+                <FaXTwitter />
+              </Link>
+              <Link 
+                href="https://leetcode.com/hunnyjain7" 
+                target="_blank"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="LeetCode Profile"
+              >
+                <FaCode />
               </Link>
             </div>
           </div>
@@ -109,13 +123,6 @@ const Navigation = () => {
               .projects()
             </Link>
             <Link
-              href="#education"
-              className="block px-3 py-2 text-gray-300 hover:text-white"
-              onClick={toggleMenu}
-            >
-              .education()
-            </Link>
-            <Link
               href="#contact"
               className="block px-3 py-2 text-gray-300 hover:text-white"
               onClick={toggleMenu}
@@ -138,6 +145,22 @@ const Navigation = () => {
                 aria-label="LinkedIn Profile"
               >
                 <FaLinkedin />
+              </Link>
+              <Link 
+                href="https://x.com/hunnyjain7" 
+                target="_blank"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="X (Twitter) Profile"
+              >
+                <FaXTwitter />
+              </Link>
+              <Link 
+                href="https://leetcode.com/hunnyjain7" 
+                target="_blank"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="LeetCode Profile"
+              >
+                <FaCode />
               </Link>
             </div>
           </div>

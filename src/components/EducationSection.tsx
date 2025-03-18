@@ -72,12 +72,13 @@ const EducationSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="text-gray-400 font-fira-code text-sm mb-2 font-bold">
-            # Academic background
+            # Education
           </div>
-          <h2 className="text-3xl font-bold">
-            <span className="text-blue-400 font-fira-code">import</span>
-            <span className="text-white font-fira-code"> education, </span>
-            <span className="text-green-400 font-fira-code">certifications</span>
+          <h2 className="text-3xl font-bold mb-8">
+            <span className="text-blue-400 font-fira-code">from</span>
+            <span className="text-white font-fira-code"> education </span>
+            <span className="text-green-400 font-fira-code">import</span>
+            <span className="text-white font-fira-code"> Education, Certifications</span>
           </h2>
         </div>
         
