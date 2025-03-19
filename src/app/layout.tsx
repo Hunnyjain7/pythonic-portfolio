@@ -8,22 +8,22 @@ const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-fira-code" })
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 
 export const metadata: Metadata = {
-  title: SITE_CONFIG.TITLE,
-  description: SITE_CONFIG.DESCRIPTION,
-  keywords: 'Hunny, Hunny Jain, Python Developer Gujarat, Python Expert India, Django Developer, AI ML Engineer, Backend Developer Gujarat, Hunny Software Engineer, Python Programmer Gujarat, Full Stack Developer India, AI Solutions Expert, Python Consultant Gujarat, Hunny Jain Developer, Remote Python Developer',
-  authors: [{ name: SITE_CONFIG.AUTHOR, url: SITE_CONFIG.GITHUB_URL }],
-  creator: SITE_CONFIG.AUTHOR,
-  publisher: SITE_CONFIG.AUTHOR,
+  title: 'Hunny Jain - Python Developer & AI Enthusiast',
+  description: 'Software Engineer with 3+ years of experience in Python development. Expert in Django, Flask, FastAPI, and AI technologies. View my portfolio and projects.',
+  keywords: 'Hunny Jain, Python Developer, Software Engineer, AI Engineer, Django Developer, Full Stack Developer, Gujarat',
+  authors: [{ name: 'Hunny Jain' }],
+  creator: 'Hunny Jain',
+  publisher: 'Hunny Jain',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: SITE_CONFIG.TITLE,
-    description: SITE_CONFIG.DESCRIPTION,
-    url: SITE_CONFIG.FULL_DOMAIN,
-    siteName: `${SITE_CONFIG.AUTHOR} - Python Development Portfolio`,
+    title: 'Hunny Jain - Python Developer & AI Enthusiast',
+    description: 'Software Engineer with 3+ years of experience in Python development. Expert in Django, Flask, FastAPI, and AI technologies.',
+    url: 'https://hunnyjain.vercel.app',
+    siteName: 'Hunny Jain Portfolio',
     images: [
       {
         url: '/hunny-profile.jpg',
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: SITE_CONFIG.TITLE,
-    description: `Senior Python Developer from ${SITE_CONFIG.LOCATION.REGION}, specializing in Django, AI/ML, and Enterprise Solutions`,
+    title: 'Hunny Jain - Python Developer & AI Enthusiast',
+    description: 'Software Engineer with 3+ years of experience in Python development. Expert in Django, Flask, FastAPI, and AI technologies.',
     creator: '@hunnyjain5',
     images: ['/hunny-profile.jpg'],
     site: '@hunnyjain5',
@@ -53,18 +53,18 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': 200,
+      'max-snippet': -1,
       noimageindex: false
     },
   },
   alternates: {
-    canonical: SITE_CONFIG.FULL_DOMAIN,
+    canonical: 'https://hunnyjain.vercel.app',
     languages: {
       'en-US': SITE_CONFIG.FULL_DOMAIN,
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'add-your-google-site-verification-here',
   },
   category: 'technology',
 };

@@ -2,11 +2,11 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: %DOMAIN_URL%/sitemap.xml
+# Sitemap location
+Sitemap: https://hunnyjain.vercel.app/sitemap.xml
 
-# Crawl-delay
-Crawl-delay: 10
+# Crawl-delay for all bots
+Crawl-delay: 1
 
 # Additional rules
 Disallow: /api/
