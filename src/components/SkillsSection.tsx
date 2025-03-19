@@ -1,5 +1,5 @@
 import { FaPython, FaAws, FaReact, FaGit, FaGitlab, FaSlack, FaHtml5, FaCss3Alt, FaDatabase, FaJs, FaAngular } from 'react-icons/fa';
-import { SiDjango, SiFlask, SiGooglecloud, SiPostgresql, SiMysql, SiRedis, SiJquery, SiFastapi, SiOpenai, SiStripe, SiPostman, SiC, SiBootstrap, SiSelenium, SiPandas } from 'react-icons/si';
+import { SiDjango, SiFlask, SiGooglecloud, SiPostgresql, SiMysql, SiRedis, SiJquery, SiFastapi, SiOpenai, SiStripe, SiPostman, SiC, SiBootstrap } from 'react-icons/si';
 
 interface SkillItemProps {
   name: string;
@@ -13,7 +13,12 @@ const SkillItem = ({ name, icon }: SkillItemProps) => (
   </div>
 );
 
-const SkillCategory = ({ title, skills }: { title: string; skills: string }) => (
+interface SkillCategoryProps {
+  title: string;
+  skills: string;
+}
+
+const SkillCategory = ({ title, skills }: SkillCategoryProps) => (
   <div className="mb-6 last:mb-0">
     <div className="flex flex-col sm:flex-row">
       <div className="text-purple-400 font-fira-code font-bold mb-2 sm:mb-0 sm:min-w-[140px] whitespace-nowrap">
