@@ -31,7 +31,7 @@ const ProfileSection = () => {
       {/* Profile Info */}
       <div className="space-y-6 text-center md:text-left">
         <div className="space-y-2 font-fira-code">
-          <div className="text-gray-400"># Python Backend Developer & AI Enthusiast</div>
+          <div className="text-gray-400"># Software Engineer & AI Enthusiast</div>
           <h1 className="text-3xl sm:text-4xl font-bold">
             <span className="text-white">Hunny</span>
             <span className="text-green-400"> Jain</span>
@@ -53,15 +53,16 @@ const ProfileSection = () => {
               <span className="text-white">]</span>
             </div>
             <div>
-              <span className="text-blue-400">environment</span>
+              <span className="text-blue-400">role</span>
               <span className="text-white"> = </span>
-              <span className="text-green-300">"Linux"</span> <span className="text-yellow-400"># Preferred OS</span>
+              <span className="text-green-300">"Full Stack Developer & AI Enthusiast"</span>
             </div>
           </div>
         </div>
 
         <p className="text-gray-300 max-w-2xl">
-          <span className="text-green-400 font-fira-code">"""</span> Software Engineer with 3+ years of experience in Python development. 
+          <span className="text-green-400 font-fira-code">"""</span> 
+          Software Engineer with 3+ years of experience in Python development. 
           Expert in Django, Flask, FastAPI, and other Python frameworks. 
           Experience with cloud services (AWS, GCP), AI technologies, and microservices architecture.
           Passionate about clean code, Linux systems, and open-source technologies.
@@ -72,7 +73,7 @@ const ProfileSection = () => {
           <Link href="#contact" className="bg-green-500 hover:bg-green-600 text-white font-fira-code py-2 px-6 rounded-lg transition-colors">
             .contact_me()
           </Link>
-          <Link href="/resume.pdf" target="_blank" className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white font-fira-code py-2 px-6 rounded-lg border border-gray-700 transition-colors">
+          <Link href="/Hunny_Jain_Resume.pdf" target="_blank" className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white font-fira-code py-2 px-6 rounded-lg border border-gray-700 transition-colors">
             .download_resume()
           </Link>
         </div>

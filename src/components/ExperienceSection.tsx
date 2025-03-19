@@ -56,11 +56,11 @@ const ExperienceSection = () => {
           <div className="text-gray-400 font-fira-code text-sm mb-2 font-bold">
             # Professional journey
           </div>
-          <h2 className="text-3xl font-bold">
-            <span className="text-blue-400 font-fira-code">class</span>
-            <span className="text-white font-fira-code"> Work</span>
+          <h2 className="text-2xl sm:text-3xl font-bold">
+            <span className="text-blue-400 font-fira-code">class </span>
+            <span className="text-white font-fira-code">Work</span>
             <span className="text-green-400 font-fira-code">Experience</span>
-            <span className="text-white font-fira-code">(Timeline):</span>
+            <span className="text-white font-fira-code">()</span>
           </h2>
         </div>
 
@@ -72,12 +72,12 @@ const ExperienceSection = () => {
             period="February 2024 - Present"
             isActive={true}
             description={[
-              "Requirement Understanding, Designing, Planning, and Development.",
-              "Design the Backend Architecture and Develop the REST APIs in Django REST Framework.", 
-              "Building Monolithic and Microservices.",
-              "Demonstrating Prompt Engineering and Generative AI Expertise.",
-              "Building backend services using the serverless architecture.",
-              "Integrating the OpenAI models with chaining of Prompt Template and LLMChain using Langchain."
+              "Leading R&D initiatives in AI/ML solutions and conducting POCs for innovative technologies.",
+              "Building and integrating AI solutions using OpenAI, Anthropic, Claude, Gemini, and other LLM models.",
+              "Developing RAG-based applications with vector databases for enhanced information retrieval.",
+              "Designing and implementing backend architectures and REST APIs in Django REST Framework.",
+              "Building scalable solutions using both monolithic, microservices and serverless architectures.",
+              "Demonstrating expertise in Prompt Engineering and LangChain for advanced AI implementations."
             ]}
           />
           

@@ -74,21 +74,21 @@ const EducationSection = () => {
           <div className="text-gray-400 font-fira-code text-sm mb-2 font-bold">
             # Education
           </div>
-          <h2 className="text-3xl font-bold mb-8">
-            <span className="text-blue-400 font-fira-code">from</span>
-            <span className="text-white font-fira-code"> education </span>
-            <span className="text-green-400 font-fira-code">import</span>
-            <span className="text-white font-fira-code"> Education, Certifications</span>
+          <h2 className="text-xl sm:text-3xl font-bold mb-8 whitespace-nowrap flex items-center justify-center gap-2">
+            <span className="text-blue-400 font-fira-code">class</span>
+            <span className="text-white font-fira-code">Academic</span>
+            <span className="text-green-400 font-fira-code">Background</span>
+            <span className="text-white font-fira-code">()</span>
           </h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
           {/* Education Column */}
           <div>
-            <h3 className="font-fira-code text-xl text-white mb-6 flex items-center">
-              <span className="text-green-400 mr-2"># </span>
-              <span className="text-purple-400">class</span> 
-              <span className="text-white"> Education:</span>
+            <h3 className="font-fira-code text-xl text-white mb-6 flex items-center gap-2">
+              <span className="text-green-400">#</span>
+              <span className="text-purple-400">class </span>
+              <span className="text-white">Education:</span>
             </h3>
             
             <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-blue-500/50 transition-all">
@@ -133,10 +133,10 @@ const EducationSection = () => {
           
           {/* Certifications Column */}
           <div>
-            <h3 className="font-fira-code text-xl text-white mb-6 flex items-center">
-              <span className="text-green-400 mr-2"># </span>
-              <span className="text-purple-400">class</span> 
-              <span className="text-white"> Certifications:</span>
+            <h3 className="font-fira-code text-xl text-white mb-6 flex items-center gap-2">
+              <span className="text-green-400">#</span>
+              <span className="text-purple-400">class </span>
+              <span className="text-white">Certifications:</span>
             </h3>
             
             <div className="space-y-4">

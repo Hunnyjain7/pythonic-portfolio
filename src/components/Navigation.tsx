@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
-import { FaXTwitter, FaCode } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaBars, FaTimes, FaTwitter, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,6 +43,20 @@ const Navigation = () => {
             </Link>
             <div className="flex space-x-4 pl-2 border-l border-gray-700">
               <Link
+                href="mailto:hunnyjain711@gmail.com"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Email"
+              >
+                <FaEnvelope />
+              </Link>
+              <Link
+                href="tel:+917567707082"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Phone"
+              >
+                <FaPhone />
+              </Link>
+              <Link
                 href="https://github.com/Hunnyjain7" 
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -59,20 +73,20 @@ const Navigation = () => {
                 <FaLinkedin />
               </Link>
               <Link 
-                href="https://x.com/hunnyjain7" 
+                href="https://x.com/hunnyjain5" 
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="X (Twitter) Profile"
               >
-                <FaXTwitter />
+                <FaTwitter />
               </Link>
               <Link 
-                href="https://leetcode.com/hunnyjain7" 
+                href="https://leetcode.com/hunnyjain711" 
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="LeetCode Profile"
               >
-                <FaCode />
+                <SiLeetcode />
               </Link>
             </div>
           </div>
@@ -129,9 +143,23 @@ const Navigation = () => {
             >
               .contact()
             </Link>
-            <div className="flex space-x-4 px-3 py-2">
+            <div className="flex justify-center space-x-4 pt-4 border-t border-gray-700">
               <Link
-                href="https://github.com/Hunnyjain7" 
+                href="mailto:hunnyjain711@gmail.com"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Email"
+              >
+                <FaEnvelope />
+              </Link>
+              <Link
+                href="tel:+917567707082"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Phone"
+              >
+                <FaPhone />
+              </Link>
+              <Link
+                href="https://github.com/Hunnyjain7"
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="GitHub Profile"
@@ -147,20 +175,20 @@ const Navigation = () => {
                 <FaLinkedin />
               </Link>
               <Link 
-                href="https://x.com/hunnyjain7" 
+                href="https://x.com/hunnyjain5" 
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="X (Twitter) Profile"
               >
-                <FaXTwitter />
+                <FaTwitter />
               </Link>
               <Link 
-                href="https://leetcode.com/hunnyjain7" 
+                href="https://leetcode.com/hunnyjain711" 
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="LeetCode Profile"
               >
-                <FaCode />
+                <SiLeetcode />
               </Link>
             </div>
           </div>

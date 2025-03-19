@@ -1,0 +1,49 @@
+{
+  "name": "%SITE_TITLE%",
+  "short_name": "Hunny Jain",
+  "description": "%SITE_DESCRIPTION%",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e1e1e",
+  "theme_color": "#1e1e1e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["technology", "development", "portfolio"],
+  "screenshots": [
+    {
+      "src": "/screenshot.png",
+      "type": "image/png",
+      "sizes": "1920x1080",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact Hunny Jain",
+      "short_name": "Contact",
+      "description": "Contact Hunny Jain for Python development services",
+      "url": "/#contact",
+      "icons": [{ "src": "/contact-icon.png", "sizes": "192x192" }]
+    }
+  ],
+  "lang": "en-US",
+  "dir": "ltr"
+} 

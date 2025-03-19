@@ -72,25 +72,38 @@ const ProjectCard = ({
     </div>
     <div className="p-6">
       <div className="flex justify-between items-start mb-4">
-        <div className="font-fira-code text-gray-400">
-          # Project
-          {tag && (
-            <span className={`ml-2 px-2 py-1 rounded-full text-xs ${
-              tag.includes('Stars') ? 'bg-green-400/10 text-green-400' : 'bg-gray-800'
-            }`}>
-              {tag}
-            </span>
-          )}
-        </div>
-        {downloads && (
-          <span className="text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded-full">
-            {downloads}
-          </span>
+        {(tag || downloads) && (
+          <div className="flex gap-2 mb-2">
+            {tag && (
+              <span className={`px-2 py-1 rounded-full text-xs ${
+                tag.includes('Stars') ? 'bg-green-400/10 text-green-400' : 'bg-gray-800'
+              }`}>
+                {tag}
+              </span>
+            )}
+            {downloads && (
+              <span className="text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded-full">
+                {downloads}
+              </span>
+            )}
+          </div>
         )}
       </div>
-      <h3 className="text-xl font-bold mb-3 text-white">
+      <div className="font-fira-code">
+        <div className="mb-1">
+          <span className="text-blue-400">{'>>>'} </span>
+          <span className="text-white">print(</span>
+          <span className="text-green-400">project</span>
+          <span className="text-white">.name)</span>
+        </div>
+        <div className="mb-4">
+          <span className="text-yellow-400">Output: </span>
+          <span className="text-green-300">"{title}"</span>
+        </div>
+      </div>
+      {/* <h3 className="text-xl font-bold mb-3 text-white">
         <span className="font-fira-code text-green-400">project.</span>{title.replace(/\s+/g, '_').toLowerCase()}
-      </h3>
+      </h3> */}
       <p className="text-gray-300 mb-4">{description}</p>
       
       <div className="mb-4">
@@ -310,11 +323,11 @@ const ProjectsSection = () => {
           <div className="text-gray-400 font-fira-code text-sm mb-2 font-bold">
             # Featured work
           </div>
-          <h2 className="text-3xl font-bold mb-8">
+          <h2 className="text-xl sm:text-3xl font-bold mb-8 whitespace-nowrap flex items-center justify-center gap-2">
             <span className="text-blue-400 font-fira-code">for</span>
-            <span className="text-white font-fira-code"> project </span>
+            <span className="text-white font-fira-code">project</span>
             <span className="text-green-400 font-fira-code">in</span>
-            <span className="text-white font-fira-code"> projects:</span>
+            <span className="text-white font-fira-code">projects:</span>
           </h2>
         </div>
 

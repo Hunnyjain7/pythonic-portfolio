@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaPhone } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -42,9 +43,9 @@ const ContactSection = () => {
           <div className="text-gray-400 font-fira-code text-sm mb-2 font-bold">
             # Get in touch
           </div>
-          <h2 className="text-3xl font-bold">
+          <h2 className="text-xl sm:text-3xl font-bold whitespace-nowrap flex items-center justify-center gap-2">
             <span className="text-blue-400 font-fira-code">def</span>
-            <span className="text-white font-fira-code"> contact_</span>
+            <span className="text-white font-fira-code">contact_</span>
             <span className="text-green-400 font-fira-code">me</span>
             <span className="text-white font-fira-code">(message):</span>
           </h2>
@@ -149,8 +150,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="text-sm text-gray-400 font-fira-code">contact_details["email"] = </div>
-                    <a href="mailto:hunny.jain@example.com" className="text-white hover:text-blue-400">
-                      hunny.jain@example.com
+                    <a href="mailto:hunnyjain711@gmail.com" className="text-white hover:text-blue-400">
+                      hunnyjain711@gmail.com
                     </a>
                   </div>
                 </div>
@@ -164,6 +165,18 @@ const ContactSection = () => {
                     <p className="text-white">
                       Gujarat, India
                     </p>
+                  </div>
+                </div>
+
+                <div className="flex">
+                  <div className="text-blue-400 mr-3 mt-1">
+                    <FaPhone />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400 font-fira-code">contact_details["phone"] = </div>
+                    <a href="tel:+917567707082" className="text-white hover:text-blue-400">
+                      +91 7567707082
+                    </a>
                   </div>
                 </div>
               </div>
@@ -199,6 +212,32 @@ const ContactSection = () => {
                   <div>
                     <div className="text-sm text-gray-400 font-fira-code">social_links.append("LinkedIn")</div>
                     <span>linkedin.com/in/hunnyjain7</span>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://x.com/hunnyjain5" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center text-white hover:text-blue-400 transition-colors"
+                >
+                  <FaTwitter className="mr-3" />
+                  <div>
+                    <div className="text-sm text-gray-400 font-fira-code">social_links.append("X")</div>
+                    <span>x.com/hunnyjain5</span>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://leetcode.com/hunnyjain711" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center text-white hover:text-blue-400 transition-colors"
+                >
+                  <SiLeetcode className="mr-3" />
+                  <div>
+                    <div className="text-sm text-gray-400 font-fira-code">social_links.append("LeetCode")</div>
+                    <span>leetcode.com/hunnyjain711</span>
                   </div>
                 </a>
               </div>
