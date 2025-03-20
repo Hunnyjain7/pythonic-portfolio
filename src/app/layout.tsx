@@ -8,10 +8,10 @@ const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-fira-code" })
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 
 export const metadata: Metadata = {
-  title: 'Hunny Jain - Python Developer & AI Enthusiast',
-  description: 'Software Engineer with 3+ years of experience in Python development. Expert in Django, Flask, FastAPI, and AI technologies. View my portfolio and projects.',
-  keywords: 'Hunny Jain, Python Developer, Software Engineer, AI Engineer, Django Developer, Full Stack Developer, Gujarat',
-  authors: [{ name: 'Hunny Jain' }],
+  title: 'Hunny Jain | Senior Python Developer & AI Engineer from Gujarat',
+  description: 'Hunny Jain is a Senior Python Developer with 3+ years of experience in Django, FastAPI, and AI technologies. Based in Gujarat, India. Expert in backend development, AI solutions, and cloud services.',
+  keywords: 'Hunny Jain, Hunny Jain Developer, Python Developer Gujarat, Senior Python Developer India, Django Expert, AI Engineer Gujarat, Backend Developer India, Hunny Jain Portfolio, Software Engineer Gujarat, Python Consultant India, AI Solutions Expert, Full Stack Developer Gujarat',
+  authors: [{ name: 'Hunny Jain', url: 'https://hunnyjain.vercel.app' }],
   creator: 'Hunny Jain',
   publisher: 'Hunny Jain',
   formatDetection: {
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  metadataBase: new URL('https://hunnyjain.vercel.app'),
   openGraph: {
     title: 'Hunny Jain - Python Developer & AI Enthusiast',
     description: 'Software Engineer with 3+ years of experience in Python development. Expert in Django, Flask, FastAPI, and AI technologies.',
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'add-your-google-site-verification-here',
+    google: 'xvlPbtDp-598AXY_lrM7N_W5ytpSW_NwkrDhVK5sPgw',
   },
   category: 'technology',
 };
@@ -81,6 +82,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <meta name="theme-color" content="#1e1e1e" />
+        <meta name="google-site-verification" content="xvlPbtDp-598AXY_lrM7N_W5ytpSW_NwkrDhVK5sPgw" />
         <script type="application/ld+json">
           {`
             {
