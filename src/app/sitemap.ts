@@ -55,5 +55,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return routes
+  // Add stylesheet reference to the sitemap
+  const sitemapWithStyle = {
+    ...routes,
+    stylesheet: {
+      type: 'text/xsl',
+      url: `${baseUrl}/sitemap.xsl`,
+    },
+  }
+
+  return sitemapWithStyle
 } 
