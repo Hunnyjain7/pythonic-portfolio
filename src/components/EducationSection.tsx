@@ -41,9 +41,6 @@ interface EducationItemProps {
   link?: string;
 }
 
-const EducationItem = ({ title, institution, period, description, link }: EducationItemProps): JSX.Element => {
-  // ...
-};
 
 const EducationSection = (): JSX.Element => {
   const education = {
