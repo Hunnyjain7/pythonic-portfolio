@@ -1,5 +1,4 @@
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { FaXTwitter, FaCode } from 'react-icons/fa6';
+import { FaGithub, FaExternalLinkAlt, FaApple, FaGooglePlay, FaCode } from 'react-icons/fa';
 import Image from 'next/image';
 
 interface Technology {
@@ -17,6 +16,8 @@ interface ProjectProps {
   liveUrl?: string;
   tag?: string;
   downloads?: string;
+  linkType?: 'github' | 'appstore' | 'playstore' | 'web';
+  playStoreUrl?: string;
 }
 
 interface ProjectItems {
@@ -48,27 +49,32 @@ const ProjectCard = ({
   description, 
   contributions, 
   technologies: techs,
-  imageUrl = '/project-placeholder.jpg',
+  imageUrl,
   githubUrl,
   liveUrl,
   tag,
-  downloads
-}: ProjectProps) => (
+  downloads,
+  linkType = 'github',
+  playStoreUrl
+}: ProjectProps): JSX.Element => (
   <div className="bg-[#1a1a1a] rounded-lg border border-gray-800 overflow-hidden hover:border-blue-500/50 transition-all group">
     <div className="relative h-48 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent z-10"></div>
-      {/* Placeholder for now - replace with actual image later */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#306998] to-[#FFD43B] flex items-center justify-center text-white">
-        <span className="font-fira-code text-sm">project-image.jpg</span>
-      </div>
-      {/* Uncomment when you have actual images
-      <Image 
-        src={imageUrl} 
-        alt={title} 
-        fill
-        className="object-cover group-hover:scale-105 transition-transform duration-300"
-      />
-      */}
+      {imageUrl ? (
+        <Image 
+          src={imageUrl} 
+          alt={title} 
+          fill
+          className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-[#306998] to-[#FFD43B] flex items-center justify-center">
+          <div className="text-center">
+            <FaCode className="text-4xl text-white mb-2" />
+            <span className="font-fira-code text-sm text-white">{title}</span>
+          </div>
+        </div>
+      )}
     </div>
     <div className="p-6">
       <div className="flex justify-between items-start mb-4">
@@ -98,7 +104,7 @@ const ProjectCard = ({
         </div>
         <div className="mb-4">
           <span className="text-yellow-400">Output: </span>
-          <span className="text-green-300">"{title}"</span>
+          <span className="text-green-300">&quot;{title}&quot;</span>
         </div>
       </div>
       {/* <h3 className="text-xl font-bold mb-3 text-white">
@@ -130,16 +136,6 @@ const ProjectCard = ({
       </div>
       
       <div className="flex space-x-4 mt-4">
-        {githubUrl && (
-          <a 
-            href={githubUrl} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors flex items-center"
-          >
-            <FaGithub className="mr-1" /> Code
-          </a>
-        )}
         {liveUrl && (
           <a 
             href={liveUrl} 
@@ -150,21 +146,35 @@ const ProjectCard = ({
             <FaExternalLinkAlt className="mr-1" /> Live Demo
           </a>
         )}
+        {playStoreUrl && (
+          <a 
+            href={playStoreUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors flex items-center"
+          >
+            <FaGooglePlay className="mr-1" /> Play Store
+          </a>
+        )}
+        {githubUrl && (
+          <a 
+            href={githubUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors flex items-center"
+          >
+            {linkType === 'github' && <FaGithub className="mr-1" />}
+            {linkType === 'appstore' && <FaApple className="mr-1" />}
+            {linkType === 'playstore' && <FaGooglePlay className="mr-1" />}
+            {linkType === 'web' && <FaExternalLinkAlt className="mr-1" />}
+            {linkType === 'github' ? 'Code' : 
+             linkType === 'appstore' ? 'App Store' :
+             linkType === 'playstore' ? 'Play Store' : 'Live Demo'}
+          </a>
+        )}
       </div>
     </div>
   </div>
-);
-
-const SocialLink = ({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) => (
-  <a 
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 px-3 py-1 rounded-full border border-gray-700 hover:border-blue-500"
-  >
-    {icon}
-    <span className="text-sm">{label}</span>
-  </a>
 );
 
 class ProjectManager {
@@ -189,9 +199,13 @@ class ProjectManager {
           "Demonstrating Prompt Engineering techniques"
         ],
         technologies: [technologies.python, technologies.flutter, technologies.react],
-        liveUrl: "https://play.google.com/store/apps/details?id=com.fortuna.fortunaAstrology",
+        liveUrl: "https://fortuna.dev/",
+        githubUrl: "https://apps.apple.com/us/app/fortuna-astrology-palmistry/id6466274746",
+        linkType: "appstore",
         tag: "Mobile App",
-        downloads: "20K+ Downloads"
+        downloads: "20K+ Downloads",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.fortuna.fortunaAstrology",
+        imageUrl: "/project-logos/fortuna-white.png"
       },
       {
         title: "Blickers",
@@ -204,7 +218,8 @@ class ProjectManager {
         technologies: [technologies.git, technologies.angular, technologies.django, technologies.python],
         liveUrl: "https://www.blickers.com/en/",
         tag: "E-commerce",
-        downloads: "10K+ Daily Active Users"
+        downloads: "10K+ Daily Active Users",
+        imageUrl: "/project-logos/blickers.webp"
       },
       {
         title: "Chart Generation Service",
@@ -226,19 +241,28 @@ class ProjectManager {
           "Built responsive dashboard using React.js for visualizing competitor analysis"
         ],
         technologies: [technologies.react, technologies.python, technologies.mysql],
-        tag: "Hospitality Domain"
+        liveUrl: "https://fencedrate.com/",
+        tag: "Hospitality Domain",
+        imageUrl: "/project-logos/fenced-rate.png"
       },
       {
         title: "Vavis - Smart Home",
-        description: "Advanced innovative capacitive touch lighting control system for home automation, enabling management of home lighting, IR-enabled devices, and room environment.",
+        description: "Advanced innovative capacitive touch lighting control system for home automation, enabling management of home lighting, IR-enabled devices, and room environment. Available on both Android and iOS platforms.",
         contributions: [
           "Developed REST and WebSocket APIs using Django REST Framework",
           "Designed and Developed admin interfaces for web and desktop applications",
-          "Implemented an integrated smart home solution enabling voice and remote control functionalities"
+          "Implemented an integrated smart home solution enabling voice and remote control functionalities",
+          "Built a scalable backend system handling real-time device communication",
+          "Integrated Alexa SmartHome Skills and Google Action SmartHome for voice control"
         ],
         technologies: [technologies.mysql, technologies.lambda, technologies.firebase, technologies.jquery, technologies.javascript, technologies.django],
-        liveUrl: "https://play.google.com/store/apps/details?id=com.smarthome.vavis",
-        tag: "IoT"
+        liveUrl: "https://vavis-backend.emtlindia.com/",
+        githubUrl: "https://apps.apple.com/in/app/vavis-smart-home/id6447227548",
+        linkType: "appstore",
+        tag: "IoT",
+        downloads: "Available on App Store & Play Store",
+        playStoreUrl: "https://play.google.com/store/apps/details?id=com.smarthome.vavis",
+        imageUrl: "/project-logos/vavis-logo.svg"
       }
     ];
   }
@@ -254,7 +278,7 @@ class ProjectManager {
         ],
         technologies: [technologies.python, technologies.mysql],
         githubUrl: "https://github.com/Hunnyjain7/fastapi-production-boilerplate",
-        tag: "50+ Stars, 9 Forks"
+        tag: "50+ Stars, 9+ Forks"
       },
       {
         title: "Rate Shopping",
@@ -312,7 +336,7 @@ class ProjectManager {
   }
 }
 
-const ProjectsSection = () => {
+const ProjectsSection = (): JSX.Element => {
   const projectManager = new ProjectManager();
   const projects = projectManager.getProjects();
 

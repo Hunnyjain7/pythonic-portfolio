@@ -1,68 +1,79 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://hunnyjain.vercel.app'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hunnyjain.vercel.app'
+  const currentDate = new Date().toISOString()
   
   const routes = [
     {
       url: baseUrl,
-      lastModified: new Date().toISOString(),
+      lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 1,
     },
     {
       url: `${baseUrl}/projects`,
-      lastModified: new Date().toISOString(),
+      lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/experience`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
     },
     {
-      url: `${baseUrl}/education`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
     },
-    // Add project-specific pages
+    // Project pages
+    {
+      url: `${baseUrl}/projects/vavis-smart-home`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
     {
       url: `${baseUrl}/projects/fortuna-astrology`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/projects/blickers`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/projects/chart-generation-service`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly' as const,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    // External project URLs
+    {
+      url: 'https://vavis-backend.emtlindia.com/',
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
+    {
+      url: 'https://apps.apple.com/in/app/vavis-smart-home/id6447227548',
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }
   ]
 
-  // Add stylesheet reference to the sitemap
-  const sitemapWithStyle = {
-    ...routes,
-    stylesheet: {
-      type: 'text/xsl',
-      url: `${baseUrl}/sitemap.xsl`,
-    },
-  }
-
-  return sitemapWithStyle
+  return routes
 } 

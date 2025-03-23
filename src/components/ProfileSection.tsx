@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaTerminal } from 'react-icons/fa';
 
-const ProfileSection = () => {
+const ProfileSection = (): JSX.Element => {
   return (
     <div className="py-16 flex flex-col md:flex-row items-center gap-12">
       {/* Profile Photo with enhanced styling */}
@@ -40,22 +40,22 @@ const ProfileSection = () => {
             <div>
               <span className="text-blue-400">experience</span>
               <span className="text-white"> = </span>
-              <span className="text-green-300">"3+ years"</span>
+              <span className="text-green-300">&quot;3+ years&quot;</span>
             </div>
             <div>
               <span className="text-blue-400">specialization</span>
               <span className="text-white"> = [</span>
-              <span className="text-green-300">"Backend"</span>
+              <span className="text-green-300">&quot;Backend&quot;</span>
               <span className="text-white">, </span>
-              <span className="text-green-300">"Django"</span>
+              <span className="text-green-300">&quot;Django&quot;</span>
               <span className="text-white">, </span>
-              <span className="text-green-300">"AI"</span>
+              <span className="text-green-300">&quot;AI&quot;</span>
               <span className="text-white">]</span>
             </div>
             <div>
               <span className="text-blue-400">role</span>
               <span className="text-white"> = </span>
-              <span className="text-green-300">"Full Stack Developer & AI Enthusiast"</span>
+              <span className="text-green-300">&quot;Full Stack Developer & AI Enthusiast&quot;</span>
             </div>
           </div>
         </div>
@@ -70,8 +70,8 @@ const ProfileSection = () => {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <Link href="#contact" className="bg-green-500 hover:bg-green-600 text-white font-fira-code py-2 px-6 rounded-lg transition-colors">
-            .contact_me()
+          <Link href="#contact" className="bg-blue-600 hover:bg-blue-400 text-white font-fira-code py-2 px-6 rounded-lg transition-colors">
+            .hire_me()
           </Link>
           <Link href="/Hunny_Jain_Resume.pdf" target="_blank" className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white font-fira-code py-2 px-6 rounded-lg border border-gray-700 transition-colors">
             .download_resume()

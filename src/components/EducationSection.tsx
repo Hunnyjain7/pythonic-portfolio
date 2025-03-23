@@ -33,7 +33,58 @@ const CertificationCard = ({ title, issuer, date, link }: CertificationProps) =>
   </div>
 );
 
-const EducationSection = () => {
+interface EducationItemProps {
+  title: string;
+  institution: string;
+  period: string;
+  description: string;
+  link: string;
+}
+
+const EducationItem = ({ 
+  title, 
+  institution, 
+  period, 
+  description, 
+  link 
+}: EducationItemProps): React.JSX.Element => {
+  return (
+    <div className="mb-10 ml-8">
+      <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-blue-500/50 transition-all">
+        <div className="flex justify-between flex-col sm:flex-row mb-1">
+          <div>
+            <span className="font-fira-code font-bold text-blue-400">~ $ </span>
+            <span className="font-fira-code text-green-400">sudo apt-get </span>
+            <span className="font-fira-code text-white">install </span>
+            <span className="font-fira-code text-yellow-400">{title}</span>
+          </div>
+          <span className="font-fira-code text-gray-400 mt-1 sm:mt-0">{period}</span>
+        </div>
+        <div className="mb-4 font-fira-code">
+          <span className="text-gray-300">$ institution = </span>
+          <span className="text-green-300">&quot;{institution}&quot;</span>
+        </div>
+        <div className="mb-4">
+          <span className="text-gray-300">{description}</span>
+        </div>
+        {link && (
+          <div className="flex justify-end">
+            <a 
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors flex items-center"
+            >
+              <FaExternalLinkAlt className="mr-1" /> View Certificate
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const EducationSection = (): React.JSX.Element => {
   const education = {
     degree: "Bachelor of Engineering",
     institution: "Gujarat Technological University",
@@ -72,90 +123,24 @@ const EducationSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="text-gray-400 font-fira-code text-sm mb-2 font-bold">
-            # Education
+            # Educational background
           </div>
-          <h2 className="text-xl sm:text-3xl font-bold mb-8 whitespace-nowrap flex items-center justify-center gap-2">
-            <span className="text-blue-400 font-fira-code">class</span>
-            <span className="text-white font-fira-code">Academic</span>
-            <span className="text-green-400 font-fira-code">Background</span>
+          <h2 className="text-2xl sm:text-3xl font-bold">
+            <span className="text-blue-400 font-fira-code">class </span>
+            <span className="text-white font-fira-code">My</span>
+            <span className="text-green-400 font-fira-code">Education</span>
             <span className="text-white font-fira-code">()</span>
           </h2>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
-          {/* Education Column */}
-          <div>
-            <h3 className="font-fira-code text-xl text-white mb-6 flex items-center gap-2">
-              <span className="text-green-400">#</span>
-              <span className="text-purple-400">class </span>
-              <span className="text-white">Education:</span>
-            </h3>
-            
-            <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-blue-500/50 transition-all">
-              <div className="flex items-start">
-                <div className="mt-1 mr-4 text-blue-400">
-                  <FaGraduationCap size={24} />
-                </div>
-                <div>
-                  <div className="font-fira-code text-sm text-gray-400 mb-1">
-                    # Academic Details
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-2">
-                    {education.degree}
-                  </h4>
-                  <div className="font-fira-code">
-                    <div className="mb-1">
-                      <span className="text-blue-400">institution</span>
-                      <span className="text-white"> = </span>
-                      <span className="text-green-300">"{education.institution}"</span>
-                    </div>
-                    <div>
-                      <span className="text-blue-400">year</span>
-                      <span className="text-white"> = </span>
-                      <span className="text-green-300">"{education.year}"</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-6 pt-6 border-t border-gray-700">
-                <div className="font-fira-code text-blue-400 mb-3">
-                  def academic_journey():
-                </div>
-                <p className="text-gray-300 italic">
-                  "Completed Bachelor of Engineering in 2021 from Gujarat Technological University, 
-                  where I gained a strong foundation in computer science and developed a keen interest in 
-                  software development, particularly in Python and backend technologies."
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          {/* Certifications Column */}
-          <div>
-            <h3 className="font-fira-code text-xl text-white mb-6 flex items-center gap-2">
-              <span className="text-green-400">#</span>
-              <span className="text-purple-400">class </span>
-              <span className="text-white">Certifications:</span>
-            </h3>
-            
-            <div className="space-y-4">
-              {certifications.map((cert, idx) => (
-                <CertificationCard key={idx} {...cert} />
-              ))}
-            </div>
-            
-            <div className="mt-6 p-4 rounded-lg bg-[#2d2d2d] border-l-4 border-yellow-500">
-              <div className="font-fira-code text-sm text-yellow-400 mb-1">
-                # Continuous Learning
-              </div>
-              <p className="text-gray-300">
-                I believe in continuous learning and regularly update my skills through courses, 
-                certifications, and hands-on projects. Currently exploring advanced concepts in 
-                AI, Prompt Engineering, and Cloud Architecture.
-              </p>
-            </div>
-          </div>
+
+        <div className="relative border-l-2 border-gray-700">
+          <EducationItem 
+            title="Bachelor of Engineering in Computer Engineering"
+            institution="Gujarat Technological University"
+            period="2017 - 2021"
+            description="Completed B.E. in Computer Engineering with 8.61 CGPA"
+            link="https://www.gtu.ac.in/"
+          />
         </div>
       </div>
     </section>

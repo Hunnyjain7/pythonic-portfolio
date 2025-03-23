@@ -27,4 +27,7 @@ User-agent: GPTBot
 Disallow: /
 
 User-agent: ChatGPT-User
-Disallow: / 
+Disallow: /
+
+# Disallow admin and API routes
+Disallow: /admin/ 
