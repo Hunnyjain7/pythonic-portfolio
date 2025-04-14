@@ -31,7 +31,7 @@ const ProfileSection = (): JSX.Element => {
       {/* Profile Info */}
       <div className="space-y-6 text-center md:text-left">
         <div className="space-y-2 font-fira-code">
-          <div className="text-gray-400"># Software Engineer & AI Enthusiast</div>
+          <div className="text-gray-400"># Software Engineer/AI Engineer</div>
           <h1 className="text-3xl sm:text-4xl font-bold">
             <span className="text-white">Hunny</span>
             <span className="text-green-400"> Jain</span>
@@ -55,17 +55,15 @@ const ProfileSection = (): JSX.Element => {
             <div>
               <span className="text-blue-400">role</span>
               <span className="text-white"> = </span>
-              <span className="text-green-300">&quot;Full Stack Developer & AI Enthusiast&quot;</span>
+              <span className="text-green-300">&quot;Python Full Stack Developer & AI Engineer&quot;</span>
             </div>
           </div>
         </div>
 
         <p className="text-gray-300 max-w-2xl">
           <span className="text-green-400 font-fira-code">"""</span> 
-          Software Engineer with 3+ years of experience in Python development. 
-          Expert in Django, Flask, FastAPI, and other Python frameworks. 
-          Experience with cloud services (AWS, GCP), AI technologies, and microservices architecture.
-          Passionate about clean code, Linux systems, and open-source technologies.
+          Software Engineer with over 3 years of experience in Python development, specializing in frameworks such as Django, FastAPI, and Flask.
+          Skilled in integrating AI capabilities into applications through Generative AI, Prompt Engineering, AI Agents, Agentic AI and RAG workflows. Experienced in building robust applications using Monolithic, Serverless, and Microservices architectures.
           <span className="text-green-400 font-fira-code"> """</span>
         </p>
 

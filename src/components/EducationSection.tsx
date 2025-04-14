@@ -88,8 +88,8 @@ const EducationSection = (): JSX.Element => {
             <span>
               <span className="text-white font-fira-code">Academic</span>
               <span className="text-green-400 font-fira-code">Background</span>
-            </span>
-            <span className="text-white font-fira-code">()</span>
+              <span className="text-white font-fira-code">()</span>
+              </span>
           </h2>
         </div>
         

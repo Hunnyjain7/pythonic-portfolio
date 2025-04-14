@@ -76,9 +76,7 @@ const ContactSection = (): JSX.Element => {
           </div>
           <h2 className="text-xl sm:text-3xl font-bold whitespace-nowrap flex items-center justify-center gap-2">
             <span className="text-blue-400 font-fira-code">def</span>
-            <span className="text-white font-fira-code">contact_</span>
-            <span className="text-green-400 font-fira-code">me</span>
-            <span className="text-white font-fira-code">(message):</span>
+            <span className="text-white font-fira-code">contact_<span className="text-green-400 font-fira-code">me</span>(message)</span>
           </h2>
         </div>
         

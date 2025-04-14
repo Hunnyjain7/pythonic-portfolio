@@ -222,7 +222,7 @@ class ProjectManager {
         imageUrl: "/project-logos/blickers.webp"
       },
       {
-        title: "Chart Generation Service",
+        title: "AWS Serverless Services",
         description: "A serverless microservices architecture project for generating dynamic 2D & 3D charts, processing large datasets, and providing comprehensive API documentation.",
         contributions: [
           "Orchestrated a versatile service, generating 2D & 3D charts via API & CLI, leveraging Bottle and Pyecharts",
@@ -290,7 +290,7 @@ class ProjectManager {
         ],
         technologies: [technologies.python, technologies.django, technologies.mysql],
         githubUrl: "https://github.com/Hunnyjain7/rate-shopping",
-        tag: "Web App"
+        tag: "DRF, REST API's"
       },
       {
         title: "RAG Search Application",
@@ -302,7 +302,7 @@ class ProjectManager {
         ],
         technologies: [technologies.python, technologies.openai, technologies.llm],
         githubUrl: "https://github.com/Hunnyjain7/rag-search-app",
-        tag: "AI/ML"
+        tag: "RAG"
       },
       {
         title: "Health Predictor Plus",
@@ -314,7 +314,7 @@ class ProjectManager {
         ],
         technologies: [technologies.python, technologies.openai, technologies.llm],
         githubUrl: "https://github.com/Hunnyjain7/health-predictor-plus",
-        tag: "AI/ML"
+        tag: "Gen AI, Prompt Emgineering & ML"
       },
       {
         title: "Algorithm Learning",
