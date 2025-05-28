@@ -33,7 +33,16 @@ const CertificationCard = ({ title, issuer, date, link }: CertificationProps) =>
   </div>
 );
 
-const EducationSection = () => {
+interface EducationItemProps {
+  title: string;
+  institution: string;
+  period: string;
+  description: string;
+  link?: string;
+}
+
+
+const EducationSection = (): JSX.Element => {
   const education = {
     degree: "Bachelor of Engineering",
     institution: "Gujarat Technological University",
@@ -76,13 +85,41 @@ const EducationSection = () => {
           </div>
           <h2 className="text-xl sm:text-3xl font-bold mb-8 whitespace-nowrap flex items-center justify-center gap-2">
             <span className="text-blue-400 font-fira-code">class</span>
-            <span className="text-white font-fira-code">Academic</span>
-            <span className="text-green-400 font-fira-code">Background</span>
-            <span className="text-white font-fira-code">()</span>
+            <span>
+              <span className="text-white font-fira-code">Academic</span>
+              <span className="text-green-400 font-fira-code">Background</span>
+              <span className="text-white font-fira-code">()</span>
+              </span>
           </h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
+                    {/* Certifications Column */}
+                    <div>
+            <h3 className="font-fira-code text-xl text-white mb-6 flex items-center gap-2">
+              <span className="text-green-400">#</span>
+              <span className="text-purple-400">class </span>
+              <span className="text-white">Certifications:</span>
+            </h3>
+            
+            <div className="space-y-4">
+              {certifications.map((cert, idx) => (
+                <CertificationCard key={idx} {...cert} />
+              ))}
+            </div>
+            
+            <div className="mt-6 p-4 rounded-lg bg-[#2d2d2d] border-l-4 border-yellow-500">
+              <div className="font-fira-code text-sm text-yellow-400 mb-1">
+                # Continuous Learning
+              </div>
+              <p className="text-gray-300">
+                I believe in continuous learning and regularly update my skills through courses, 
+                certifications, and hands-on projects. Currently exploring advanced concepts in 
+                AI, Prompt Engineering, and Cloud Architecture.
+              </p>
+            </div>
+          </div>
+
           {/* Education Column */}
           <div>
             <h3 className="font-fira-code text-xl text-white mb-6 flex items-center gap-2">
@@ -107,12 +144,12 @@ const EducationSection = () => {
                     <div className="mb-1">
                       <span className="text-blue-400">institution</span>
                       <span className="text-white"> = </span>
-                      <span className="text-green-300">"{education.institution}"</span>
+                      <span className="text-green-300">&quot;{education.institution}&quot;</span>
                     </div>
                     <div>
                       <span className="text-blue-400">year</span>
                       <span className="text-white"> = </span>
-                      <span className="text-green-300">"{education.year}"</span>
+                      <span className="text-green-300">&quot;{education.year}&quot;</span>
                     </div>
                   </div>
                 </div>
@@ -128,32 +165,6 @@ const EducationSection = () => {
                   software development, particularly in Python and backend technologies."
                 </p>
               </div>
-            </div>
-          </div>
-          
-          {/* Certifications Column */}
-          <div>
-            <h3 className="font-fira-code text-xl text-white mb-6 flex items-center gap-2">
-              <span className="text-green-400">#</span>
-              <span className="text-purple-400">class </span>
-              <span className="text-white">Certifications:</span>
-            </h3>
-            
-            <div className="space-y-4">
-              {certifications.map((cert, idx) => (
-                <CertificationCard key={idx} {...cert} />
-              ))}
-            </div>
-            
-            <div className="mt-6 p-4 rounded-lg bg-[#2d2d2d] border-l-4 border-yellow-500">
-              <div className="font-fira-code text-sm text-yellow-400 mb-1">
-                # Continuous Learning
-              </div>
-              <p className="text-gray-300">
-                I believe in continuous learning and regularly update my skills through courses, 
-                certifications, and hands-on projects. Currently exploring advanced concepts in 
-                AI, Prompt Engineering, and Cloud Architecture.
-              </p>
             </div>
           </div>
         </div>

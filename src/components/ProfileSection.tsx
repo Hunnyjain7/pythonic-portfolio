@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaTerminal } from 'react-icons/fa';
 
-const ProfileSection = () => {
+const ProfileSection = (): JSX.Element => {
   return (
     <div className="py-16 flex flex-col md:flex-row items-center gap-12">
       {/* Profile Photo with enhanced styling */}
@@ -31,7 +31,7 @@ const ProfileSection = () => {
       {/* Profile Info */}
       <div className="space-y-6 text-center md:text-left">
         <div className="space-y-2 font-fira-code">
-          <div className="text-gray-400"># Software Engineer & AI Enthusiast</div>
+          <div className="text-gray-400"># Software Engineer/AI Engineer</div>
           <h1 className="text-3xl sm:text-4xl font-bold">
             <span className="text-white">Hunny</span>
             <span className="text-green-400"> Jain</span>
@@ -40,38 +40,36 @@ const ProfileSection = () => {
             <div>
               <span className="text-blue-400">experience</span>
               <span className="text-white"> = </span>
-              <span className="text-green-300">"3+ years"</span>
+              <span className="text-green-300">&quot;3+ years&quot;</span>
             </div>
             <div>
               <span className="text-blue-400">specialization</span>
               <span className="text-white"> = [</span>
-              <span className="text-green-300">"Backend"</span>
+              <span className="text-green-300">&quot;Backend&quot;</span>
               <span className="text-white">, </span>
-              <span className="text-green-300">"Django"</span>
+              <span className="text-green-300">&quot;Django&quot;</span>
               <span className="text-white">, </span>
-              <span className="text-green-300">"AI"</span>
+              <span className="text-green-300">&quot;AI&quot;</span>
               <span className="text-white">]</span>
             </div>
             <div>
               <span className="text-blue-400">role</span>
               <span className="text-white"> = </span>
-              <span className="text-green-300">"Full Stack Developer & AI Enthusiast"</span>
+              <span className="text-green-300">&quot;Python Full Stack Developer & AI Engineer&quot;</span>
             </div>
           </div>
         </div>
 
         <p className="text-gray-300 max-w-2xl">
           <span className="text-green-400 font-fira-code">"""</span> 
-          Software Engineer with 3+ years of experience in Python development. 
-          Expert in Django, Flask, FastAPI, and other Python frameworks. 
-          Experience with cloud services (AWS, GCP), AI technologies, and microservices architecture.
-          Passionate about clean code, Linux systems, and open-source technologies.
+          Software Engineer with over 3 years of experience in Python development, specializing in frameworks such as Django, FastAPI, and Flask.
+          Skilled in integrating AI capabilities into applications through Generative AI, Prompt Engineering, AI Agents, Agentic AI and RAG workflows. Experienced in building robust applications using Monolithic, Serverless, and Microservices architectures.
           <span className="text-green-400 font-fira-code"> """</span>
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <Link href="#contact" className="bg-green-500 hover:bg-green-600 text-white font-fira-code py-2 px-6 rounded-lg transition-colors">
-            .contact_me()
+          <Link href="#contact" className="bg-blue-600 hover:bg-blue-400 text-white font-fira-code py-2 px-6 rounded-lg transition-colors">
+            .hire_me()
           </Link>
           <Link href="/Hunny_Jain_Resume.pdf" target="_blank" className="bg-[#2d2d2d] hover:bg-[#3d3d3d] text-white font-fira-code py-2 px-6 rounded-lg border border-gray-700 transition-colors">
             .download_resume()

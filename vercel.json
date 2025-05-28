@@ -1,0 +1,79 @@
+{
+    "version": 2,
+    "buildCommand": "next build",
+    "devCommand": "next dev",
+    "installCommand": "npm install",
+    "framework": "nextjs",
+    "regions": [
+        "bom1"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "github": {
+        "silent": true,
+        "autoAlias": true
+    },
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
+                },
+                {
+                    "key": "Permissions-Policy",
+                    "value": "camera=(), microphone=(), geolocation=()"
+                }
+            ]
+        },
+        {
+            "source": "/(.*).(jpe?g|png|webp|avif|gif|svg|ico)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*).(js|css)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        }
+    ],
+    "redirects": [
+        {
+            "source": "/github",
+            "destination": "https://github.com/Hunnyjain7"
+        },
+        {
+            "source": "/linkedin",
+            "destination": "https://www.linkedin.com/in/hunnyjain7"
+        },
+        {
+            "source": "/twitter",
+            "destination": "https://x.com/hunnyjain5"
+        },
+        {
+            "source": "/leetcode",
+            "destination": "https://leetcode.com/hunnyjain711"
+        }
+    ]
+}

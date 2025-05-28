@@ -1,7 +1,7 @@
 // Site Configuration
 export const SITE_CONFIG = {
-  DOMAIN: 'hunnyjain.com',
-  FULL_DOMAIN: 'https://hunnyjain.com',
+  DOMAIN: 'hunnyjain.vercel.app',
+  FULL_DOMAIN: 'https://hunnyjain.vercel.app',
   TITLE: 'Hunny Jain | Senior Python Developer & AI Engineer in Gujarat',
   DESCRIPTION: 'Expert Python Developer with 3+ years experience in Django, AI/ML, and Cloud Services. Hire me for your next Python project. Based in Gujarat, India.',
   AUTHOR: 'Hunny Jain',

@@ -1,5 +1,5 @@
 import { FaPython, FaAws, FaReact, FaGit, FaGitlab, FaSlack, FaHtml5, FaCss3Alt, FaDatabase, FaJs, FaAngular } from 'react-icons/fa';
-import { SiDjango, SiFlask, SiGooglecloud, SiPostgresql, SiMysql, SiRedis, SiJquery, SiFastapi, SiOpenai, SiStripe, SiPostman, SiC, SiBootstrap, SiSelenium, SiPandas } from 'react-icons/si';
+import { SiDjango, SiFlask, SiGooglecloud, SiPostgresql, SiMysql, SiRedis, SiJquery, SiFastapi, SiOpenai, SiStripe, SiPostman, SiC, SiBootstrap } from 'react-icons/si';
 
 interface SkillItemProps {
   name: string;
@@ -13,7 +13,12 @@ const SkillItem = ({ name, icon }: SkillItemProps) => (
   </div>
 );
 
-const SkillCategory = ({ title, skills }: { title: string; skills: string }) => (
+interface SkillCategoryProps {
+  title: string;
+  skills: string;
+}
+
+const SkillCategory = ({ title, skills }: SkillCategoryProps) => (
   <div className="mb-6 last:mb-0">
     <div className="flex flex-col sm:flex-row">
       <div className="text-purple-400 font-fira-code font-bold mb-2 sm:mb-0 sm:min-w-[140px] whitespace-nowrap">
@@ -45,12 +50,17 @@ const SkillsSection = () => {
         <div className="space-y-6 p-4 sm:p-6 rounded-lg border border-gray-800 bg-[#1a1a1a]">
           <SkillCategory 
             title="Languages"
-            skills="Python, JavaScript, TypeScript, C, SQL, HTML, CSS, Bash"
+            skills="Python, JavaScript, TypeScript, C, C++, SQL, HTML, CSS, Bash"
           />
           
           <SkillCategory 
             title="Backend"
             skills="Django, Django REST Framework, FastAPI, Flask, Bottle"
+          />
+
+          <SkillCategory
+            title="Architecture"
+            skills="Monolithic, Serverless, Microservices"
           />
 
           <SkillCategory 
@@ -60,17 +70,17 @@ const SkillsSection = () => {
           
           <SkillCategory 
             title="Libraries"
-            skills="Django Oscar, Stripe, Pandas, Numpy, PyQt5, Pyecharts, Boto3, Django Channels, jQuery, Openpyxl, Celery"
+            skills="Django Oscar, SerpAPI, Stripe, Twilio, Pandas, Numpy, PyQt5, Pyecharts, Boto3, Django Channels, jQuery, Openpyxl, Celery"
           />
 
           <SkillCategory 
             title="Databases"
-            skills="PostgreSQL, MySQL, MongoDB"
+            skills="MySQL, PostgreSQL, MongoDB"
           />
 
           <SkillCategory 
             title="LLMs"
-            skills="OpenAI, Anthropic, Gemini, Claude, Ollama"
+            skills="OpenAI, Anthropic, Gemini, Claude, Ollama, DeepSeek, Perplexity"
           />
 
           <SkillCategory 
@@ -95,7 +105,7 @@ const SkillsSection = () => {
           
           <SkillCategory 
             title="Message Queue"
-            skills="RabbitMQ, Redis"
+            skills="RabbitMQ, Redis, SQS"
           />
 
           <SkillCategory 
@@ -110,7 +120,7 @@ const SkillsSection = () => {
           
           <SkillCategory 
             title="Other"
-            skills="Web Scraping/Crawling, Web/Excel Automation, Shell Scripting, GUI Development"
+            skills="Web Scraping/Crawling, Web/Excel Automation, Shell Scripting, GUI Development and ETL Workflows"
           />
         </div>
       </div>

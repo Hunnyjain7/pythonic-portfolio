@@ -1,39 +1,70 @@
 "use client";
 
-import { useState } from 'react';
-import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaPhone } from 'react-icons/fa';
-import { SiLeetcode } from 'react-icons/si';
+import { useState, useEffect } from 'react';
+import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaPhone } from 'react-icons/fa';
+import { executeRecaptcha } from '@/utils/recaptcha';
 
-const ContactSection = () => {
+const ContactSection = (): JSX.Element => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
-  
+   
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  useEffect(() => {
+    // Load reCAPTCHA script
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-  
-  const handleSubmit = (e: React.FormEvent) => {
+   
+  const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
     setFormStatus('submitting');
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    try {
+      // Execute reCAPTCHA
+      const recaptchaToken = await executeRecaptcha('contact_form');
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setFormStatus('success');
       setFormData({ name: '', email: '', message: '' });
       
       // Reset status after 3 seconds
       setTimeout(() => setFormStatus('idle'), 3000);
-    }, 1000);
+    } catch (error: unknown) {
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 3000);
+    }
   };
   
   return (
@@ -45,9 +76,7 @@ const ContactSection = () => {
           </div>
           <h2 className="text-xl sm:text-3xl font-bold whitespace-nowrap flex items-center justify-center gap-2">
             <span className="text-blue-400 font-fira-code">def</span>
-            <span className="text-white font-fira-code">contact_</span>
-            <span className="text-green-400 font-fira-code">me</span>
-            <span className="text-white font-fira-code">(message):</span>
+            <span className="text-white font-fira-code">contact_<span className="text-green-400 font-fira-code">me</span>(message)</span>
           </h2>
         </div>
         
@@ -58,7 +87,7 @@ const ContactSection = () => {
               <div className="text-green-400"># Send me a message</div>
               <div className="text-gray-400 text-sm">return response</div>
             </div>
-            
+  
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-300">
@@ -123,7 +152,7 @@ const ContactSection = () => {
               
               {formStatus === 'success' && (
                 <div className="p-4 mt-4 text-sm text-green-400 rounded-lg bg-[#2d2d2d]" role="alert">
-                  <span className="font-fira-code">return</span> "Thank you for your message! I'll respond as soon as possible."
+                  <span className="font-fira-code">return</span> "Thank you for your message! I&apos;ll respond as soon as possible."
                 </div>
               )}
               
@@ -149,19 +178,19 @@ const ContactSection = () => {
                     <FaEnvelope />
                   </div>
                   <div>
-                    <div className="text-sm text-gray-400 font-fira-code">contact_details["email"] = </div>
+                    <div className="text-sm text-gray-400 font-fira-code">contact_details[&quot;email&quot;] = </div>
                     <a href="mailto:hunnyjain711@gmail.com" className="text-white hover:text-blue-400">
                       hunnyjain711@gmail.com
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex">
                   <div className="text-blue-400 mr-3 mt-1">
                     <FaMapMarkerAlt />
                   </div>
                   <div>
-                    <div className="text-sm text-gray-400 font-fira-code">contact_details["location"] = </div>
+                    <div className="text-sm text-gray-400 font-fira-code">contact_details[&quot;location&quot;] = </div>
                     <p className="text-white">
                       Gujarat, India
                     </p>
@@ -173,7 +202,7 @@ const ContactSection = () => {
                     <FaPhone />
                   </div>
                   <div>
-                    <div className="text-sm text-gray-400 font-fira-code">contact_details["phone"] = </div>
+                    <div className="text-sm text-gray-400 font-fira-code">contact_details[&quot;phone&quot;] = </div>
                     <a href="tel:+917567707082" className="text-white hover:text-blue-400">
                       +91 7567707082
                     </a>
@@ -190,19 +219,6 @@ const ContactSection = () => {
               
               <div className="space-y-4">
                 <a 
-                  href="https://github.com/Hunnyjain7" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center text-white hover:text-blue-400 transition-colors"
-                >
-                  <FaGithub className="mr-3" />
-                  <div>
-                    <div className="text-sm text-gray-400 font-fira-code">social_links.append("GitHub")</div>
-                    <span>github.com/Hunnyjain7</span>
-                  </div>
-                </a>
-                
-                <a 
                   href="https://www.linkedin.com/in/hunnyjain7" 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -210,34 +226,8 @@ const ContactSection = () => {
                 >
                   <FaLinkedin className="mr-3" />
                   <div>
-                    <div className="text-sm text-gray-400 font-fira-code">social_links.append("LinkedIn")</div>
+                    <div className="text-sm text-gray-400 font-fira-code">social_links.append(&quot;LinkedIn&quot;)</div>
                     <span>linkedin.com/in/hunnyjain7</span>
-                  </div>
-                </a>
-
-                <a 
-                  href="https://x.com/hunnyjain5" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center text-white hover:text-blue-400 transition-colors"
-                >
-                  <FaTwitter className="mr-3" />
-                  <div>
-                    <div className="text-sm text-gray-400 font-fira-code">social_links.append("X")</div>
-                    <span>x.com/hunnyjain5</span>
-                  </div>
-                </a>
-
-                <a 
-                  href="https://leetcode.com/hunnyjain711" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center text-white hover:text-blue-400 transition-colors"
-                >
-                  <SiLeetcode className="mr-3" />
-                  <div>
-                    <div className="text-sm text-gray-400 font-fira-code">social_links.append("LeetCode")</div>
-                    <span>leetcode.com/hunnyjain711</span>
                   </div>
                 </a>
               </div>

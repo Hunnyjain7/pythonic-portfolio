@@ -1,6 +1,6 @@
 import { FaHeart, FaPython, FaLinux } from 'react-icons/fa';
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
   
   return (
@@ -10,11 +10,11 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <div className="font-fira-code text-gray-400 mb-2">
               <span className="text-green-400"># </span>
-              <span className="text-blue-400">if</span> __name__ == <span className="text-green-300">"__main__"</span>:
+              <span className="text-blue-400">if</span> __name__ == <span className="text-green-300">&quot;__main__&quot;</span>:
             </div>
             <div className="font-fira-code text-gray-300 pl-4">
               <span className="text-blue-400">print</span>
-              (<span className="text-green-300">"© {currentYear} Hunny Jain. All rights reserved."</span>)
+              (<span className="text-green-300">&quot;© {currentYear} Hunny Jain. All rights reserved.&quot;</span>)
             </div>
           </div>
           

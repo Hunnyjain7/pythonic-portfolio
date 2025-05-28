@@ -5,22 +5,28 @@ import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaBars, FaTimes, FaTwitter, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 
-const Navigation = () => {
+const Navigation = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const _handleScroll = (): void => {
+    // ... scroll logic ...
+  };
+
   return (
-    <nav className="fixed top-0 w-full bg-[#2d2d2d] shadow-lg z-50">
+    <nav className="fixed top-0 w-full z-50 bg-[#1a1a1a]/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="font-fira-code text-green-400 hover:text-green-300">
-              <span className="text-xl">def</span>{" "}
-              <span className="text-blue-400">hunny_jain</span>
-              <span className="text-white">()</span>
+              <span className="text-xl text-blue-400">hunny</span>
+              <span className="text-blue-400">_ </span>
+              <span className="text-xl text-blue-400">jain</span>
+              <span className="text-xl text-white">.</span>
+              <span className="text-xl">py</span>{" "}
             </Link>
           </div>
           

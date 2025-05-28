@@ -1,4 +1,4 @@
-import { FaLaptopCode, FaBriefcase, FaTerminal } from 'react-icons/fa';
+import { FaTerminal } from 'react-icons/fa';
 
 interface ExperienceItemProps {
   title: string;
@@ -9,46 +9,48 @@ interface ExperienceItemProps {
   isActive?: boolean;
 }
 
-const ExperienceItem = ({ title, company, period, description, companyShort, isActive = false }: ExperienceItemProps) => (
-  <div className="mb-10 ml-8">
-    <div className={`absolute w-6 h-6 rounded-full mt-1.5 -left-3 border-2 
-      ${isActive ? 'border-green-500 bg-[#1e1e1e]' : 'border-gray-700 bg-[#1e1e1e]'}`}
-    >
-      <div className={`absolute w-3 h-3 rounded-full mt-0.5 ml-0.5 ${isActive ? 'bg-green-500' : 'bg-gray-700'}`}></div>
-    </div>
-    <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-blue-500/50 transition-all">
-      <div className="flex justify-between flex-col sm:flex-row mb-1">
-        <div>
-          <span className="font-fira-code font-bold text-blue-400">~ $ </span>
-          <span className="font-fira-code text-green-400">sudo apt-get </span>
-          <span className="font-fira-code text-white">install </span>
-          <span className="font-fira-code text-yellow-400">{title}</span>
-        </div>
-        <span className="font-fira-code text-gray-400 mt-1 sm:mt-0">{period}</span>
+const ExperienceItem = ({ title, company, period, description, companyShort, isActive = false }: ExperienceItemProps): JSX.Element => {
+  return (
+    <div className="mb-10 ml-8">
+      <div className={`absolute w-6 h-6 rounded-full mt-1.5 -left-3 border-2 
+        ${isActive ? 'border-green-500 bg-[#1e1e1e]' : 'border-gray-700 bg-[#1e1e1e]'}`}
+      >
+        <div className={`absolute w-3 h-3 rounded-full mt-0.5 ml-0.5 ${isActive ? 'bg-green-500' : 'bg-gray-700'}`}></div>
       </div>
-      <div className="mb-4 font-fira-code">
-        <span className="text-gray-300">$ company = </span>
-        <span className="text-green-300">"{company}"</span>
-      </div>
-      <div className="mb-4 space-y-2">
-        {description.map((item, index) => (
-          <div className="flex" key={index}>
-            <span className="text-green-400 mr-2 font-fira-code">{'>>>'} </span>
-            <p className="text-gray-300">{item}</p>
+      <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-blue-500/50 transition-all">
+        <div className="flex justify-between flex-col sm:flex-row mb-1">
+          <div>
+            <span className="font-fira-code font-bold text-blue-400">~ $ </span>
+            <span className="font-fira-code text-green-400">sudo apt-get </span>
+            <span className="font-fira-code text-white">install </span>
+            <span className="font-fira-code text-yellow-400">{title}</span>
           </div>
-        ))}
-      </div>
-      <div className="flex justify-end">
-        <span className="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-[#306998] text-white">
-          <span className="mr-1">{companyShort}</span>
-          <FaTerminal />
-        </span>
+          <span className="font-fira-code text-gray-400 mt-1 sm:mt-0">{period}</span>
+        </div>
+        <div className="mb-4 font-fira-code">
+          <span className="text-gray-300">$ company = </span>
+          <span className="text-green-300">&quot;{company}&quot;</span>
+        </div>
+        <div className="mb-4 space-y-2">
+          {description.map((item, index) => (
+            <div className="flex" key={index}>
+              <span className="text-green-400 mr-2 font-fira-code">{'>>>'} </span>
+              <p className="text-gray-300">{item}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-end">
+          <span className="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-[#306998] text-white">
+            <span className="mr-1">{companyShort}</span>
+            <FaTerminal />
+          </span>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
-const ExperienceSection = () => {
+const ExperienceSection = (): JSX.Element => {
   return (
     <section id="experience" className="py-20 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
