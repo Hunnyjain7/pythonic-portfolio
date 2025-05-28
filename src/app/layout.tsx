@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next";
 import { Inter, Fira_Code, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -166,7 +167,11 @@ export default function RootLayout({
 }): React.JSX.Element {
   return (
     <html lang="en">
+      <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2950629050940113" crossOrigin="anonymous"></script>
+      </head>
       <body>{children}</body>
+      <Analytics />
     </html>
   );
 }
