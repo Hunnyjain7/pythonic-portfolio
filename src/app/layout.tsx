@@ -168,10 +168,33 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2950629050940113"
-     crossOrigin="anonymous"></script>
+        {/* Google AdSense Meta Tags */}
+        <meta name="google-adsense-account" content="ca-pub-2950629050940113" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Google AdSense Script */}
+        <Script
+          id="adsbygoogle-init"
+          strategy="afterInteractive"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2950629050940113`}
+          crossOrigin="anonymous"
+        />
+        {/* Test Ad Unit */}
+        <div className="ad-container">
+          <ins
+            className="adsbygoogle"
+            style={{ display: 'block' }}
+            data-ad-client="ca-pub-2950629050940113"
+            data-ad-slot="5784099083"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+          <Script id="adsbygoogle-init-2">
+            {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+          </Script>
+        </div>
+      </body>
       <Analytics />
     </html>
   );
